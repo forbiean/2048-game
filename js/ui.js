@@ -213,14 +213,14 @@ class UIManager {
     handleNewGame() {
         if (!window.game) return;
         window.game.newGame();
-        this.updateBoard();
+        this.updateBoard(true); // 标记为新游戏
         this.updateScores();
         this.updateUndoButton();
         this.updateStats();
     }
 
     // 更新游戏板
-    updateBoard() {
+    updateBoard(isNewGame = false) {
         // 获取当前所有方块
         const tiles = window.game.getAllTiles();
         
@@ -234,7 +234,7 @@ class UIManager {
         this.tileElements = {};
         
         // 处理每个方块
-        tiles.forEach(tile => {
+        tiles.forEach((tile, index) => {
             const tileId = `tile-${tile.row}-${tile.col}`;
             let tileEl = existingTiles[tileId];
             
@@ -242,8 +242,16 @@ class UIManager {
                 // 方块已存在，更新位置和值
                 this.updateTileElement(tileEl, tile);
             } else {
-                // 创建新方块
-                this.createTileElement(tile);
+                // 创建新方块，新游戏时添加延迟避免同时闪烁
+                if (isNewGame) {
+                    // 新游戏时延迟创建，避免所有方块同时动画
+                    setTimeout(() => {
+                        this.createTileElement(tile, true);
+                    }, index * 100);
+                } else {
+                    // 普通移动时立即创建
+                    this.createTileElement(tile, false);
+                }
             }
             
             // 从现有方块中移除已处理的方块
@@ -257,7 +265,7 @@ class UIManager {
     }
 
     // 创建方块元素
-    createTileElement(tile) {
+    createTileElement(tile, isNewGame = false) {
         const tileEl = document.createElement('div');
         const tileId = `tile-${tile.row}-${tile.col}`;
         
@@ -271,10 +279,24 @@ class UIManager {
         this.tileContainer.appendChild(tileEl);
         this.tileElements[tileId] = tileEl;
         
-        // 添加出现动画
-        setTimeout(() => {
+        // 延迟添加动画类，避免闪烁
+        if (isNewGame) {
+            // 新游戏时延迟添加动画，让元素先稳定显示
+            setTimeout(() => {
+                tileEl.classList.add('tile-new');
+                // 动画完成后移除动画类
+                setTimeout(() => {
+                    tileEl.classList.remove('tile-new');
+                }, 300);
+            }, 50);
+        } else {
+            // 普通移动时立即添加动画类
             tileEl.classList.add('tile-new');
-        }, 5);
+            // 动画完成后移除动画类
+            setTimeout(() => {
+                tileEl.classList.remove('tile-new');
+            }, 300);
+        }
     }
 
     // 更新现有方块元素
