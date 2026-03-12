@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>2048游戏</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/themes.css">
+</head>
+<body>
+    <div class="container">
+        <header class="game-header">
+            <div class="title-section">
+                <h1 class="game-title">2048</h1>
+                <div class="score-section">
+                    <div class="score-container">
+                        <div class="score-label">当前分数</div>
+                        <div class="score" id="current-score">0</div>
+                    </div>
+                    <div class="score-container">
+                        <div class="score-label">最高分</div>
+                        <div class="score" id="best-score">0</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="controls-section">
+                <button class="btn btn-primary" id="new-game-btn">新游戏</button>
+                <button class="btn btn-secondary" id="undo-btn" disabled>撤销</button>
+                <button class="btn btn-theme" id="theme-toggle">🌙</button>
+            </div>
+        </header>
+
+        <main class="game-main">
+            <div class="game-container">
+                <div class="game-board" id="game-board">
+                    <!-- 游戏方块将在这里动态生成 -->
+                </div>
+                <div class="tile-container" id="tile-container">
+                    <!-- 动态生成的方块 -->
+                </div>
+            </div>
+        </main>
+
+        <footer class="game-footer">
+            <div class="stats-section">
+                <div class="stat-item">
+                    <span class="stat-label">游戏次数:</span>
+                    <span class="stat-value" id="games-played">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">平均分数:</span>
+                    <span class="stat-value" id="avg-score">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">达到2048次数:</span>
+                    <span class="stat-value" id="wins-count">0</span>
+                </div>
+            </div>
+            
+            <div class="instructions">
+                <p>使用方向键或滑动来移动方块</p>
+                <p>相同数字的方块碰撞时会合并</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 游戏结束弹窗 -->
+    <div class="game-over-modal" id="game-over-modal" style="display: none;">
+        <div class="modal-content">
+            <h2 class="modal-title" id="modal-title">游戏结束!</h2>
+            <p class="modal-message" id="modal-message">再试一次吧!</p>
+            <div class="modal-buttons">
+                <button class="btn btn-primary" id="restart-btn">重新开始</button>
+                <button class="btn btn-secondary" id="continue-btn" style="display: none;">继续游戏</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 脚本文件 -->
+    <script src="js/storage.js"></script>
+    <script src="js/themes.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

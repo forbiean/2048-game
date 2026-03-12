@@ -1,0 +1,190 @@
+/* 主题系统 - 深色模式 */
+
+/* 深色模式变量 */
+body.dark-mode {
+    --primary-color: #f9f6f2;
+    --secondary-color: #3c3a32;
+    --background-color: #1e1c1a;
+    --text-color: #f9f6f2;
+    --tile-background: #3c3a32;
+    --tile-color: #f9f6f2;
+}
+
+/* 深色模式下的方块颜色 */
+body.dark-mode .tile-2 { background: #3c3a32; color: #f9f6f2; }
+body.dark-mode .tile-4 { background: #4a473e; color: #f9f6f2; }
+body.dark-mode .tile-8 { background: #8f7a66; color: #f9f6f2; }
+body.dark-mode .tile-16 { background: #a0826d; color: #f9f6f2; }
+body.dark-mode .tile-32 { background: #b18c5f; color: #f9f6f2; }
+body.dark-mode .tile-64 { background: #c49651; color: #f9f6f2; }
+body.dark-mode .tile-128 { background: #d4a043; color: #f9f6f2; }
+body.dark-mode .tile-256 { background: #e2aa35; color: #f9f6f2; }
+body.dark-mode .tile-512 { background: #f0b427; color: #f9f6f2; }
+body.dark-mode .tile-1024 { background: #ffbe19; color: #f9f6f2; }
+body.dark-mode .tile-2048 { background: #ffc40b; color: #f9f6f2; }
+
+body.dark-mode .tile-super {
+    background: #776e65;
+    color: #f9f6f2;
+}
+
+/* 深色模式下的背景格子 */
+body.dark-mode .grid-cell {
+    background: rgba(60, 58, 50, 0.35);
+}
+
+/* 深色模式下的按钮样式 */
+body.dark-mode .btn-primary {
+    background: #776e65;
+    color: #f9f6f2;
+}
+
+body.dark-mode .btn-primary:hover {
+    background: #877e75;
+}
+
+body.dark-mode .btn-secondary {
+    background: #3c3a32;
+    color: #f9f6f2;
+}
+
+body.dark-mode .btn-secondary:hover:not(:disabled) {
+    background: #4c4a42;
+}
+
+body.dark-mode .btn-theme {
+    background: #f0b427;
+    color: #1e1c1a;
+}
+
+body.dark-mode .btn-theme:hover {
+    background: #ffc40b;
+}
+
+/* 深色模式下的统计区域 */
+body.dark-mode .stats-section {
+    background: #3c3a32;
+}
+
+/* 深色模式下的游戏结束弹窗 */
+body.dark-mode .game-over-modal {
+    background: rgba(30, 28, 26, 0.85);
+}
+
+body.dark-mode .modal-content {
+    background: #1e1c1a;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .modal-title {
+    color: #f9f6f2;
+}
+
+body.dark-mode .modal-message {
+    color: #f9f6f2;
+}
+
+/* 深色模式下的分数弹出动画 */
+body.dark-mode .score-popup {
+    color: #f0b427;
+}
+
+/* 深色模式下的说明文字 */
+body.dark-mode .instructions {
+    color: #f9f6f2;
+}
+
+/* 深色模式下的统计标签 */
+body.dark-mode .stat-label {
+    color: #f9f6f2;
+}
+
+body.dark-mode .stat-value {
+    color: #f9f6f2;
+}
+
+/* 深色模式下的分数容器 */
+body.dark-mode .score-container {
+    background: #3c3a32;
+}
+
+body.dark-mode .score-label {
+    color: #f9f6f2;
+}
+
+body.dark-mode .score {
+    color: #f9f6f2;
+}
+
+/* 深色模式下的过渡动画 */
+body.dark-mode,
+body.dark-mode .game-board,
+body.dark-mode .btn,
+body.dark-mode .stats-section,
+body.dark-mode .score-container,
+body.dark-mode .modal-content {
+    transition: all 0.3s ease;
+}
+
+/* 深色模式下的滚动条 */
+body.dark-mode::-webkit-scrollbar {
+    width: 8px;
+}
+
+body.dark-mode::-webkit-scrollbar-track {
+    background: #1e1c1a;
+}
+
+body.dark-mode::-webkit-scrollbar-thumb {
+    background: #3c3a32;
+    border-radius: 4px;
+}
+
+body.dark-mode::-webkit-scrollbar-thumb:hover {
+    background: #4c4a42;
+}
+
+/* 深色模式下的选择高亮 */
+body.dark-mode ::selection {
+    background: #776e65;
+    color: #f9f6f2;
+}
+
+/* 深色模式下的焦点样式 */
+body.dark-mode .btn:focus {
+    outline: 2px solid #f0b427;
+    outline-offset: 2px;
+}
+
+/* 深色模式下的禁用按钮 */
+body.dark-mode .btn-secondary:disabled {
+    opacity: 0.4;
+    background: #2c2a22;
+    color: #8a8880;
+}
+
+/* 深色模式下的加载动画 */
+body.dark-mode .loading {
+    color: #f0b427;
+}
+
+/* 深色模式下的错误动画 */
+body.dark-mode .error-shake {
+    color: #ff6b6b;
+}
+
+/* 深色模式下的胜利庆祝 */
+body.dark-mode .tile-2048 {
+    box-shadow: 0 0 20px rgba(255, 196, 11, 0.5);
+}
+
+/* 深色模式下的触摸反馈 */
+@media (hover: none) and (pointer: coarse) {
+    body.dark-mode .btn:active {
+        background-color: rgba(240, 180, 39, 0.2);
+    }
+    
+    body.dark-mode .tile:active {
+        box-shadow: 0 0 10px rgba(240, 180, 39, 0.3);
+    }
+}

@@ -1,0 +1,236 @@
+/* 动画效果 */
+
+/* 方块出现动画 */
+@keyframes tile-appear {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.tile-new {
+    animation: tile-appear 0.15s ease-out;
+}
+
+/* 方块移动动画 */
+@keyframes tile-move {
+    0% {
+        transform: translateY(-2px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.tile-moving {
+    animation: tile-move 0.1s ease-out;
+}
+
+/* 方块合并动画 */
+@keyframes tile-merge {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.tile-merged {
+    animation: tile-merge 0.12s ease-out;
+}
+
+/* 分数增加动画 */
+@keyframes score-increase {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+}
+
+.score-popup {
+    position: absolute;
+    font-weight: bold;
+    color: #edc53f;
+    pointer-events: none;
+    animation: score-increase 1s ease-out forwards;
+}
+
+/* 按钮点击动画 */
+@keyframes button-click {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.btn:active {
+    animation: button-click 0.1s ease-in-out;
+}
+
+/* 游戏结束弹窗动画 */
+@keyframes modal-fade-in {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.game-over-modal.show .modal-content {
+    animation: modal-fade-in 0.3s ease-out;
+}
+
+/* 方块滑动动画 */
+.tile-moving {
+    z-index: 10;
+    transition: transform 0.15s ease-in-out;
+}
+
+/* 撤销按钮可用/禁用状态动画 */
+@keyframes undo-pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+#undo-btn:not(:disabled):hover {
+    animation: undo-pulse 0.3s ease-in-out;
+}
+
+/* 主题切换按钮旋转动画 */
+@keyframes theme-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#theme-toggle.switching {
+    animation: theme-spin 0.5s ease-in-out;
+}
+
+/* 新游戏按钮动画 */
+@keyframes new-game-shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+#new-game-btn:hover {
+    animation: new-game-shake 0.3s ease-in-out;
+}
+
+/* 统计数字变化动画 */
+@keyframes stat-update {
+    0% {
+        transform: scale(1);
+        color: inherit;
+    }
+    50% {
+        transform: scale(1.1);
+        color: #edc53f;
+    }
+    100% {
+        transform: scale(1);
+        color: inherit;
+    }
+}
+
+.stat-value.updated {
+    animation: stat-update 0.4s ease-in-out;
+}
+
+/* 胜利动画 */
+@keyframes victory-celebration {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+    }
+    25% {
+        transform: scale(1.1) rotate(5deg);
+    }
+    75% {
+        transform: scale(1.1) rotate(-5deg);
+    }
+}
+
+.tile-2048 {
+    animation: victory-celebration 0.5s ease-in-out;
+}
+
+/* 移动端触摸反馈 */
+@media (hover: none) and (pointer: coarse) {
+    .btn:active {
+        transform: scale(0.95);
+        transition: transform 0.1s ease;
+    }
+    
+    .tile:active {
+        transform: scale(0.98);
+        transition: transform 0.1s ease;
+    }
+}
+
+/* 加载动画 */
+@keyframes loading-pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.loading {
+    animation: loading-pulse 1.5s ease-in-out infinite;
+}
+
+/* 错误提示动画 */
+@keyframes error-shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-2px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(2px);
+    }
+}
+
+.error-shake {
+    animation: error-shake 0.5s ease-in-out;
+}
