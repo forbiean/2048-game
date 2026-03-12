@@ -10,37 +10,37 @@ body.dark-mode {
     --tile-color: #f9f6f2;
 }
 
-/* 深色模式下的方块颜色 */
-body.dark-mode .tile-2 { background: #3c3a32; color: #f9f6f2; }
-body.dark-mode .tile-4 { background: #4a473e; color: #f9f6f2; }
-body.dark-mode .tile-8 { background: #8f7a66; color: #f9f6f2; }
-body.dark-mode .tile-16 { background: #a0826d; color: #f9f6f2; }
-body.dark-mode .tile-32 { background: #b18c5f; color: #f9f6f2; }
-body.dark-mode .tile-64 { background: #c49651; color: #f9f6f2; }
-body.dark-mode .tile-128 { background: #d4a043; color: #f9f6f2; }
-body.dark-mode .tile-256 { background: #e2aa35; color: #f9f6f2; }
-body.dark-mode .tile-512 { background: #f0b427; color: #f9f6f2; }
-body.dark-mode .tile-1024 { background: #ffbe19; color: #f9f6f2; }
-body.dark-mode .tile-2048 { background: #ffc40b; color: #f9f6f2; }
+/* 深色模式下的方块颜色 - 优化对比度 */
+body.dark-mode .tile-2 { background: #5a5750; color: #f9f6f2; }
+body.dark-mode .tile-4 { background: #6a665d; color: #f9f6f2; }
+body.dark-mode .tile-8 { background: #9f8a76; color: #f9f6f2; }
+body.dark-mode .tile-16 { background: #b0947d; color: #f9f6f2; }
+body.dark-mode .tile-32 { background: #c19e6f; color: #f9f6f2; }
+body.dark-mode .tile-64 { background: #d2a861; color: #f9f6f2; }
+body.dark-mode .tile-128 { background: #e3b253; color: #f9f6f2; }
+body.dark-mode .tile-256 { background: #f1bc45; color: #f9f6f2; }
+body.dark-mode .tile-512 { background: #ffc637; color: #f9f6f2; }
+body.dark-mode .tile-1024 { background: #ffd229; color: #f9f6f2; }
+body.dark-mode .tile-2048 { background: #ffdd1b; color: #f9f6f2; }
 
 body.dark-mode .tile-super {
     background: #776e65;
     color: #f9f6f2;
 }
 
-/* 深色模式下的背景格子 */
+/* 深色模式下的背景格子 - 提高对比度 */
 body.dark-mode .grid-cell {
-    background: rgba(60, 58, 50, 0.35);
+    background: rgba(80, 78, 70, 0.4);
 }
 
-/* 深色模式下的按钮样式 */
+/* 深色模式下的按钮样式 - 优化对比度 */
 body.dark-mode .btn-primary {
-    background: #776e65;
-    color: #f9f6f2;
+    background: #8a8279;
+    color: #1e1c1a;
 }
 
 body.dark-mode .btn-primary:hover {
-    background: #877e75;
+    background: #9a9289;
 }
 
 body.dark-mode .btn-secondary {
@@ -103,9 +103,9 @@ body.dark-mode .stat-value {
     color: #f9f6f2;
 }
 
-/* 深色模式下的分数容器 */
+/* 深色模式下的分数容器 - 提高对比度 */
 body.dark-mode .score-container {
-    background: #3c3a32;
+    background: #5a5750;
 }
 
 body.dark-mode .score-label {
